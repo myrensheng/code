@@ -1,0 +1,33 @@
+url的构造：
+https://baike.baidu.com：80/item/%E6%9D%A8%E5%B9%82/149851?fr=aladdin#4
+第一部分：协议 （http https ftp ssh news megnet等）
+第二部分：主机 可以是服务器的地址  也可以是域名或者IP地址
+第三部分：端口号 冒号后面的数字 http 80默认 https443 ftp21 mysql 3306
+第四部分：从端口号后面的斜杠到？处，这部分叫做路径，请求文件的路径
+第五部分：请求参数，从？到#中间的部分。是请求参数，query string ；写法是：键=值&键2=值2
+第六部分：锚点，也就是页面跳转用的。
+
+get和post的区别：
+1 get是用来向服务器请求数据，post向服务器提交数据。
+2 get请求数据时，请求参数会暴露在浏览器的地址栏中，不安全。
+  post提交数据时，提交的参数是在请求体中，不会出现在地址栏中，相对安全。
+3 get请求的数据大小收到url限制，而post没有限制。
+
+
+服务器与程序之间的调用：
+1 服务器上的make_sever函数中的参数有一个是app，make_sever函数调用app函数（函数可以当做参数进行传递）
+2 make_sever函数调用并执行app函数，app函数有两个参数，environ参数和start_rsponse参数。environ（WSGI的环境信息）里面包含的是一些重要的键值对，start_response是一个可调用的对象，status(HTTP状态）和response_headers(响应消息的头)是最重要的参数。
+3 在app函数中，path_info变量用来存储用户输入的url中的路径信息。循环遍历urls文件中的urlspattern元组，如果path_info与正则匹配到的路径一样，返回view.视图函数。否则404报错。
+4 urls文件中的urlspattern是一个（（正则匹配路径，view.视图函数））
+5 views文件中写的是打开每一个网页页面的函数即：视图函数，函数的命名和网页的命名要一致，视图函数的参数是environ和start_response，返回的是网页代码二进制形式。
+6 templaets目录下放的是每一个网页的代码。
+
+
+响应体：start_response，状态码和各种键值对
+
+响应头：网页源代码，views文件每个函数的返回值
+
+
+
+
+
