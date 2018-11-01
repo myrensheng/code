@@ -1,2 +1,0 @@
-1 服务器上的make_sever函数中的参数有一个是app，make_sever函数调用app函数（函数可以当做参数进行传递）
-2 make_sever函数调用并执行app函数，app函数有两个参数，environ参数
