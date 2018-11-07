@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head> 
+	<meta charset="utf-8">
+	<title>无标题文档</title>
+	<style>
+		body { text-align:center; }
+		textarea { width:300px; height:150px; }
+	</style>
+
+</head>
+
+<body>
+	<textarea id="t1">?value1=a&value2=b&value3=c&value4=a&value5=b</textarea><br /><br />
+	<!-- 将上面框里的字符串分解成
+	     value1=a
+	     value2=b
+	     ....
+	     显示到下面框里
+	 -->
+	<input type="button" value="变" id="btn" /><br /><br />
+	<textarea id="t2"></textarea>
+	<script type="text/javascript">
+		// 第二种方法
+	var obtext=document.getElementById('t1');
+	var obutton=document.getElementById('btn');
+	var obtext2=document.getElementById('t2');
+	// console.log(obtext)
+	// console.log(obtext.innerHTML)
+	// console.log(obtext.value)
+	value=obtext.value.slice(1)
+	value=value.split("&").join("\n")
+	obutton.onclick=function(){
+		obtext2.value=value
+	}
+	console.log(value)
+
+
+
+
+
+
+
+	// 第一种方法
+		// 获取标签对象
+	// var obtext=document.getElementById('t1');
+	// var obutton=document.getElementById('btn');
+	// var obtext2=document.getElementById('t2');
+	// console.log(obtext.innerHTML)
+	
+	// // 获取标签内的文字
+	// text=obtext.innerHTML.replace('?','');
+	// // console.log(text)
+	// var textList=text.split('&amp;');
+	// // console.log(textList)
+	// // 按钮绑定点击事件
+	// obutton.onclick=function(){
+	// 	obtext2.innerHTML=textList.join('\n');
+	// }
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

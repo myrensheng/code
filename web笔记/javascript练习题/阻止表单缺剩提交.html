@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>阻止表单缺剩提交</title>
+</head>
+<body>
+<form action="https://www.baidu.com" name="form1">
+	用户名：<input type="text" name="username">
+	<span></span> <br>
+	密码： <input type="password" name="password"> <br>
+	<input type="submit" name="submit1" value="注册"> <br>
+	<p>注册页面提示信息，ajax学完在补充：当光标移除输入框就开始判断</p>
+	<p>如果没有填完是不允许提交的，所以需要使用js验证，阻止缺剩提交</p>
+</form>
+</body>
+<script type="text/javascript">
+	// 查找表单的三种方法
+	// 1 通用方法
+	// 2 通过document.forms[0]获得form对象
+	// 3 获得form表单中的对象通过：document.form.username。获取到name值为username的标签对象
+
+	document.forms[0].submit1.onclick=function(e){
+		var ev=e||event  //浏览器兼容
+		ev.preventDefault() // 阻止表单默认提交【缺剩提交】
+		usernameValue=document.forms[0].username.value
+		if (usernameValue && usernameValue.length>3) {
+			// 如果username不为为空且长度大于3，则可以提交
+			document.forms[0].username.nextElementSibling.innerText='用户名可用'
+			document.forms[0].submit()
+		}else{
+			document.forms[0].username.value=''
+			document.forms[0].username.nextElementSibling.innerText='用户长度不够'
+			document.forms[0].username.focus()
+		}
+	}
+</script>
+</html>
