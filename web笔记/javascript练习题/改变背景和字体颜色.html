@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>第二题</title>
+</head>
+<style type="text/css">
+	#d1{width: 100px;height: 100px;margin-top: 20px; background:red;text-align: center;
+		line-height: 100px;color: black;}
+	#p1{display: block;}
+
+</style>
+<body>
+<input type="button" id="b1" value="修改背景颜色">
+<input type="button" id="b3" value="显示隐藏文字">
+<input type="button" id="b2" value="改变文字颜色">
+
+<div id="d1"> <p id="p1">生而无畏</p></div>
+</body>
+</html>
+<script type="text/javascript">
+	// 获取标签对象
+	var oButton1=document.getElementById('b1');
+	var oButton2=document.getElementById('b2');
+	var oButton3=document.getElementById('b3');
+	var oDiv=document.getElementById('d1');
+	var op=document.getElementById('p1');
+	// 改变div背景颜色
+	oButton1.onclick=function(){
+		if (oDiv.style.background=='yellow'){
+			oDiv.style.background='red';
+		}else{
+			oDiv.style.background='yellow';
+		};
+	};
+	// 改变文字颜色
+	oButton2.onclick=function(){
+		if (oDiv.style.color=='white'){
+			oDiv.style.color='black';
+		}else{
+			oDiv.style.color='white';
+		};
+	};
+	//显示隐藏文字
+	oButton3.onclick=function(){
+		if (op.style.display=="none"){
+			op.style.display='block';
+		}else{
+			op.style.display='none';
+		};
+	};
+</script>

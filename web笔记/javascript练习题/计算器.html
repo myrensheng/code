@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>作业第三题</title>
+</head>
+<style type="text/css">
+	input{width:100px;height: 20px;margin-left: 20px;margin-top: 10px;}
+	.operator{width: 25px;height: 25px;text-align: center;line-height: 25px;}
+</style>
+<body>
+<input type="text" id="firstnumb" placeholder="firstnumb">
+<input type="text" id="secondnumb" placeholder="secondnumb">
+&nbsp;&nbsp;=
+<input type="text" id="result" name="result" placeholder="result">
+<br>
+<input type="button" class="operator" value='加'>
+<input type="button" class="operator" value='减'
+<input type="button" class="operator" value='乘'>
+<input type="button" class="operator" value='除'>
+</body>
+<script type="text/javascript">
+	var ofirst=document.getElementById('firstnumb');
+	var osecond=document.getElementById('secondnumb');
+	var oresult=document.getElementById('result');
+	var oboperator=document.getElementsByClassName('operator');
+	oboperator[0].onclick=function(){
+		oresult.value = parseFloat(ofirst.value)+parseFloat(osecond.value)
+	};
+	oboperator[1].onclick=function(){
+		oresult.value = parseFloat(ofirst.value)-parseFloat(osecond.value)
+	};
+	oboperator[2].onclick=function(){
+		oresult.value = parseFloat(ofirst.value)*parseFloat(osecond.value)
+	};
+	oboperator[3].onclick=function(){
+		oresult.value = parseFloat(ofirst.value)/parseFloat(osecond.value)
+	};
+</script>
+</html>
