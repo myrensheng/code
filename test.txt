@@ -1,4 +1,1 @@
-hello this is you codes.
-hold on 
-
-��ã�����ʱ�䳤�Ƿ��Ͽ�
+这句话用来测试git中的合并与衍合
