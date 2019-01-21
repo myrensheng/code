@@ -1,4 +1,6 @@
 hello this is you codes.
 hold on 
 
-��ã�����ʱ�䳤�Ƿ��Ͽ�
+你好，测试时间长是否会断开
+
+这句话用来测试合并与衍合的区别
